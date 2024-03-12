@@ -1,0 +1,32 @@
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    
+}
+.cuadrado.rojo {
+    background: red;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.cuadrado.verde {
+    background: rgb(19, 220, 16);
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+} 
+
+.cuadrado.azul {
+    background: rgb(59, 13, 199);
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+
+}
+button{background-color: rgb(112, 122, 130);
+    border: 2px solid black;}
+input
+{border: 2px solid black;}
+textarea
+{border: 2px solid black;}

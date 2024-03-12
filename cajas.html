@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cambiar color de cajas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Cambiar color de cajas</h1>
+    <div class="contenedor">
+        <div class="cuadrado rojo" id="rojo"></div>
+        <div class="cuadrado verde" id="verde"></div>
+        <div class="cuadrado azul" id="azul"></div>
+    </div>
+    <div>
+        <form action="/enviar" id="formulario">
+            <p>
+                <label>Nombre: <input name="nombre" type="text"></label>
+            </p>
+            <p>
+                <label>Mensaje: <textarea name="mensaje" cols="30" rows="10" maxlength="200"></textarea></label>
+            </p>
+            <div id="contador">0/200</div>
+</div>
+            <p>
+                <button>Enviar</button>
+                 </p>
+    
+
+    <script>
+        const rojo = document.getElementById('rojo');
+        const verde = document.getElementById('verde');
+        const azul = document.getElementById('azul');
+
+        rojo.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'red';
+        });
+
+        verde.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'rgb(19, 220, 16)';
+        });
+
+        azul.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'rgb(59, 13, 199)';
+        });
+        
+        const formulario = document.getElementById('formulario');
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const mensaje = document.getElementById('mensaje');
+const contador = document.getElementById('contador');
+
+formulario.addEventListener('input', function(e) {
+    const target = e.target;
+    const longitudMax = target.getAttribute('maxlength');
+    const longitudAct = target.value.length;
+    contador.innerHTML = `${longitudAct}/${longitudMax}`;
+});
+            
+            
+            if(e.currentTarget.nombre.value == '') {
+                alert('El campo nombre es requerido');
+                return;
+            }
+
+            if (e.currentTarget.mensaje.value == '') {
+                alert('El campo mensaje es requerido');
+                return;
+            }
+        
+
+            alert(`Gracias ${e.currentTarget.nombre.value} por enviarnos ${e.currentTarget.mensaje.value} `);
+
+            
+        });
+
+    </script>
+</body>
+</html>
